@@ -36,7 +36,7 @@ jobs:
     environment: env-spring-boot-docker
     steps:
       - name: Deploy via SSH to EC2
-        uses: appleboy/ssh-action@v1.2.0
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
