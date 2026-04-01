@@ -6,11 +6,11 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  build:
+  docker-build-push:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Configure AWS Credentials
@@ -33,6 +33,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: docker-build-push
+    environment: env-spring-boot-docker
     steps:
       - name: Deploy via SSH to EC2
         uses: appleboy/ssh-action@v1.2.0
