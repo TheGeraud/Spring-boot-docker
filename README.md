@@ -5,6 +5,7 @@ automatiquement sur AWS EC2 via un pipeline CI/CD GitHub Actions.
 
 ## 📐 Architecture
 
+```
 GitHub Push (main)
 │
 ▼
@@ -25,7 +26,7 @@ GitHub Push (main)
 │
 ▼
 App live sur EC2
-
+```
 ## 🛠️ Stack technique
 
 | Technologie | Rôle |
@@ -78,7 +79,7 @@ et s'exécute en deux jobs distincts :
 **GitHub Secrets** — aucune donnée sensible dans le code.
 
 ## 📁 Structure du projet
-
+```
 Spring-boot-docker/
 ├── .github/
 │   └── workflows/        # Pipeline CI/CD GitHub Actions
@@ -87,6 +88,7 @@ Spring-boot-docker/
 ├── Dockerfile            # Build multi-stage (Maven → JRE)
 ├── docker-compose.yml    # Orchestration
 └── pom.xml               # Dépendances Maven
+```
 
 ## 💡 Ce que j'ai appris
 
