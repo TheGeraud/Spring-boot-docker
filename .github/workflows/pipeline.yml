@@ -37,13 +37,6 @@ jobs:
     needs: docker-build-push
     environment: env-spring-boot-docker
     steps:
-      - name: Debug SSH key
-        run: |
-          echo "Key length: ${#SSH_PRIVATE_KEY_EC2}"
-          echo "Key starts with: ${SSH_PRIVATE_KEY_EC2:0:40}"
-        env:
-          SSH_PRIVATE_KEY_EC2: ${{ secrets.SSH_PRIVATE_KEY_EC2 }}
-
       - name: Deploy via SSH to EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
